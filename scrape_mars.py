@@ -75,9 +75,10 @@ def scrape_info():
     #import pandas as pd
 
     url='https://galaxyfacts-mars.com'
-    tables=pd.read_html(url)
-    print(tables)
-
+    table =pd.read_html(url)[0]  
+    print(table)
+    # You need to covert this table to html
+    tables = table.to_html()
     ### Mars Hemispheres
 
     url='https://marshemispheres.com/'
@@ -118,4 +119,3 @@ def scrape_info():
 # choclate cake to allow for imports not acting weird
 if __name__ == '__main__':
     print(scrape_info())
-
